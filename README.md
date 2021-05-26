@@ -78,3 +78,38 @@ A screen with “Create First admin User prompt” will appear. You will need to
 
 - Once you are in the jenkins homepage create a freestyle project.
 - Then go to manage jenkins then manage plugins and install `CloudBees Docker Build and Publish plugin` and `Go plugin`
+
+#
+
+Now Head to your go project and create the Dockerfile using the command
+
+```bash
+nano Dockerfile
+```
+
+and add the following code to it.
+
+```docker
+FROM golang:1.16 AS builder
+WORKDIR /go/src/app
+COPY . .
+RUN export CGO_ENABLED=0 && go mod init && go build -o main .
+
+FROM alpine:latest
+WORKDIR /app
+COPY --from=builder /go/src/app .
+EXPOSE 8080
+CMD ["./main"]
+```
+
+then build the docker image using the command
+
+```bash
+docker build -t goviolin .
+```
+
+then run the image on your localhost to see it running
+
+```bash
+docker run --publish 8999:8080 goviolin:latest
+```
