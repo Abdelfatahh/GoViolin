@@ -113,3 +113,63 @@ then run the image on your localhost to see it running
 ```bash
 docker run --publish 8999:8080 goviolin:latest
 ```
+
+#
+
+Now we need to push the image to [Dockerhub](https://hub.docker.com). To push the image to dockerhub first we need to login to docker using our terminal using the command:
+
+```bash
+docker login
+```
+
+- You'll enter your username and password and now you are loggedin!
+
+- Now you are ready to send your image to Dockerhub!
+
+- List your docker images
+
+```bash
+docker images
+```
+
+- Run our docker image in the background.
+
+```bash
+docker run -d -p 8999:8080 goviolin:latest
+```
+
+- List the running containers using
+
+```bash
+docker ps
+```
+
+- Get the container id of our image and commit it to your docker hub
+
+```bash
+docker commit CONTAINER_ID <your-username>/<your-repo-name>:[tagname]
+```
+
+- In our case it will be like this
+
+```bash
+docker commit 7ab94666de1a abdelfata7/go-violin-instabug:instabug
+```
+
+- Then we push it to the repo.
+
+```bash
+docker push abdelfata7/go-violin-instabug:instabug
+```
+
+- The result will be something like this
+
+```bash
+The push refers to repository [docker.io/abdelfata7/go-violin-instabug]
+1bcbf7c4977d: Pushed
+3dca23a82013: Pushed
+b2d5eeeaba3a: Mounted from library/alpine
+instabug: digest: sha256:4c3ba7fbb24124753367c970ff7193f15f9894c80b22474f0f40a18c6a3dd826 size: 948
+```
+
+- The link to our image is [here](https://hub.docker.com/layers/151394918/abdelfata7/go-violin-instabug/instabug/images/sha256-4c3ba7fbb24124753367c970ff7193f15f9894c80b22474f0f40a18c6a3dd826?context=explore).
