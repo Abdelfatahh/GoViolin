@@ -66,7 +66,7 @@ func getPort() string {
 	if p != "" {
 		return ":" + p
 	}
-	return ":8080"
+	return ":3000"
 }
 
 func render(w http.ResponseWriter, tmpl string, pageVars PageVars) {

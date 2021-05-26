@@ -73,3 +73,8 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 A screen with “Create First admin User prompt” will appear. You will need to enter a username, password, full name and email address.
+
+# Jenkins Plugins
+
+- Once you are in the jenkins homepage create a freestyle project.
+- Then go to manage jenkins then manage plugins and install `CloudBees Docker Build and Publish plugin` and `Go plugin`
