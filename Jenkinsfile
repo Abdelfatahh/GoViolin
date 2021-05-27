@@ -38,7 +38,7 @@ pipeline {
         steps{
             script {
                 try{
-                    docker.withRegistry( "" , registryCredential ) {
+                    docker.withRegistry( "" , registryCredential ) 
                     dockerImage.push("latest")
                     emailtext body: 'Your images was deployed successfully', subject: "Your Docker image deploy with #${BUILD_NUMBER} was deployed successfully.", to: 'abduelfata7@gmail.com'
                 }
