@@ -209,3 +209,12 @@ Go to http://localhost:8080 and login to your jenkins account.
 - Fill it with your credentials.
 - It will be something like this
   ![4](./readmeImages/4.png)
+
+# Results
+
+- Now all the work is done. And I received two emails to confirm that the build was done successfully and the images was deployed successfully.
+
+- I received the mails! :ok_hand:
+  ![5](./readmeImages/5.png)
+
+- The final build is here! :raised_hands:
