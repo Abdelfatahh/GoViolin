@@ -218,3 +218,4 @@ Go to http://localhost:8080 and login to your jenkins account.
   ![5](./readmeImages/5.png)
 
 - The final build is here! :raised_hands:
+  ![6](./readmeImages/6.png)
