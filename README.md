@@ -173,3 +173,39 @@ instabug: digest: sha256:4c3ba7fbb24124753367c970ff7193f15f9894c80b22474f0f40a18
 ```
 
 - The link to our image is [here](https://hub.docker.com/layers/151394918/abdelfata7/go-violin-instabug/instabug/images/sha256-4c3ba7fbb24124753367c970ff7193f15f9894c80b22474f0f40a18c6a3dd826?context=explore).
+
+#
+
+# Jenkins Pipeline
+
+Go to http://localhost:8080 and login to your jenkins account.
+
+- Create a new job
+  ![1](./readmeImages/1.png)
+
+- Then go to configure
+
+- Scroll down to Pipeline and select the Pipeline script from SCM and select GIT
+
+- Add your repo URL
+  ![2](./readmeImages/2.png)
+
+- Install Docker Plugin and add your docker credentials to your jenkins environment.
+
+- Build your pipeline by clicking build now in the main page of the job.
+
+- I suffered in the configuration so I got my build failed multiple times but at the end it worked successfully.
+  ![3](./readmeImages/3.png)
+
+#
+
+# Reporting using Email Extension Plugin
+
+- To get reported after each build with the status of the pipeline you need to configure a mail server first.
+- In my case I used my personal one on my gmail.
+- Go to Manage Jenkins
+- Configure System
+- You'll find Extended Email Notification.
+- Fill it with your credentials.
+- It will be something like this
+  ![4](./readmeImages/4.png)
